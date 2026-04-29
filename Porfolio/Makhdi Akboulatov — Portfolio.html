@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:///D:/Projet/Porfoilio/portfolio_makhdi.html#competences -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makhdi Akboulatov — Portfolio</title>
+<link href="./Makhdi Akboulatov — Portfolio_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08090d;
+    --surface: #111318;
+    --surface2: #181b22;
+    --border: rgba(255,255,255,0.07);
+    --accent1: #5b8dee;
+    --accent2: #a78bfa;
+    --accent3: #34d399;
+    --text: #e8eaf0;
+    --muted: #7a7f94;
+    --grad1: linear-gradient(135deg, #5b8dee 0%, #a78bfa 100%);
+    --grad2: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
+    --grad3: linear-gradient(135deg, #34d399 0%, #5b8dee 100%);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(8,9,13,0.75);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    background: var(--grad1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 50%, rgba(91,141,238,0.13) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(167,139,250,0.1) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+  }
+  .hero-tag {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(91,141,238,0.4);
+    background: rgba(91,141,238,0.1);
+    color: var(--accent1);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease 0.1s both;
+  }
+  .hero-name span {
+    background: var(--grad1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 1.2rem;
+    color: var(--muted);
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+  .hero-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    animation: fadeUp 0.6s ease 0.3s both;
+  }
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .badge svg { width: 14px; height: 14px; opacity: 0.7; }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 8rem 4rem;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 4rem;
+  }
+  .section-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--accent1);
+    opacity: 0.7;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── PARCOURS SCOLAIRE ─── */
+  #parcours { background: var(--surface); }
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent1), var(--accent2), transparent);
+  }
+  .tl-item {
+    position: relative;
+    padding: 2.5rem 0 2.5rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-dot {
+    position: absolute;
+    left: -2.45rem;
+    top: 3rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--grad1);
+    box-shadow: 0 0 0 4px rgba(91,141,238,0.2);
+  }
+  .tl-year {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent1);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .tl-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .tl-sub { color: var(--muted); font-size: 0.9rem; }
+  .tl-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+  .tag {
+    padding: 0.25rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    background: rgba(91,141,238,0.1);
+    border: 1px solid rgba(91,141,238,0.25);
+    color: var(--accent1);
+  }
+  .tag.purple {
+    background: rgba(167,139,250,0.1);
+    border-color: rgba(167,139,250,0.25);
+    color: var(--accent2);
+  }
+  .tag.green {
+    background: rgba(52,211,153,0.1);
+    border-color: rgba(52,211,153,0.25);
+    color: var(--accent3);
+  }
+
+  /* ─── COMPÉTENCES ─── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .skill-card:hover {
+    border-color: rgba(91,141,238,0.4);
+    transform: translateY(-4px);
+  }
+  .skill-card-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+  }
+  .skill-card-icon.blue { background: rgba(91,141,238,0.15); }
+  .skill-card-icon.purple { background: rgba(167,139,250,0.15); }
+  .skill-card-icon.green { background: rgba(52,211,153,0.15); }
+  .skill-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+  }
+  .skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+  }
+  .skill-item:last-child { border-bottom: none; }
+  .skill-level {
+    display: flex; gap: 4px;
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); }
+  .dot.on { background: var(--accent1); }
+  .dot.on.purple { background: var(--accent2); }
+  .dot.on.green { background: var(--accent3); }
+
+  /* ─── PROJETS ─── */
+  #projets { background: var(--surface); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  @media (max-width: 900px) { .projects-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } }
+
+  .linkage {
+	color: white;
+  }
+
+  .project-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    transition: transform 0.35s ease, box-shadow 0.35s;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.5);
+  }
+  .project-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+  }
+  .project-card:hover .project-bg { transform: scale(1.07); }
+
+  /* CTF */
+  .project-card.ctf .project-bg {
+    background-image:
+      url("./image/rspi.png");
+    background-color: #0d1a17;
+  }
+  /* CTF texture */
+  .project-card.ctf .project-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(52,211,153,0.04) 20px, rgba(52,211,153,0.04) 21px),
+      repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(52,211,153,0.04) 20px, rgba(52,211,153,0.04) 21px);
+  }
+  /* Game Jam */
+  .project-card.gamejam .project-bg {
+    background-image:
+      url("./image/cgj.png");
+    background-color: #110d1a;
+  }
+  /* Jeux vidéo */
+  .project-card.godot .project-bg {
+    background-image:
+      url("./image/godot.png");
+    background-color: #0d1220;
+  }
+
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8,9,13,0.95) 0%, rgba(8,9,13,0.3) 55%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.8rem;
+    transition: background 0.3s;
+  }
+  .project-card:hover .project-overlay {
+    background: linear-gradient(to top, rgba(8,9,13,0.98) 0%, rgba(8,9,13,0.5) 60%, rgba(8,9,13,0.1) 100%);
+  }
+  .project-cat {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent3);
+    margin-bottom: 0.4rem;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .project-card.gamejam .project-cat { color: var(--accent2); }
+  .project-card.godot .project-cat { color: var(--accent1); }
+  .project-card:hover .project-cat { opacity: 1; transform: translateY(0); }
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .project-desc {
+    font-size: 0.82rem;
+    color: rgba(232,234,240,0.65);
+    line-height: 1.5;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .project-card:hover .project-desc { max-height: 100px; }
+  .project-skills { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.8rem; }
+  .project-skills .tag { font-size: 0.7rem; padding: 0.18rem 0.6rem; }
+
+  /* ─── EXPÉRIENCE PRO ─── */
+  .exp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  @media (max-width: 700px) { .exp-grid { grid-template-columns: 1fr; } }
+  .exp-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: border-color 0.3s;
+  }
+  .exp-card:hover { border-color: rgba(167,139,250,0.4); }
+  .exp-top {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    margin-bottom: 0.8rem;
+  }
+  .exp-icon {
+    width: 42px; height: 42px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    background: rgba(167,139,250,0.12);
+  }
+  .exp-badge {
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: rgba(52,211,153,0.1);
+    border: 1px solid rgba(52,211,153,0.25);
+    color: var(--accent3);
+  }
+  .exp-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .exp-card p { color: var(--muted); font-size: 0.875rem; }
+
+  /* ─── CENTRES D'INTÉRÊT ─── */
+  #interets { background: var(--surface); }
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .interest-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .interest-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(91,141,238,0.35);
+  }
+  .interest-emoji { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+  .interest-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .interest-card p { color: var(--muted); font-size: 0.82rem; }
+
+  /* ─── PROJET PROF ─── */
+  .ambitions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  @media (max-width: 700px) { .ambitions-grid { grid-template-columns: 1fr; } }
+  .amb-card {
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .amb-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .amb-card.ct::before { background: var(--grad1); }
+  .amb-card.mt::before { background: var(--grad2); }
+  .amb-card.lt::before { background: var(--grad3); }
+  .amb-horizon {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.7rem;
+  }
+  .amb-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+  }
+  .amb-card p { color: var(--muted); font-size: 0.875rem; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 4rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    background: var(--grad1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  footer p { color: var(--muted); font-size: 0.85rem; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── RESPONSIVE NAV ─── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 5rem 1.5rem; }
+    #hero { padding: 0 1.5rem; }
+    footer { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">M.A</div>
+  <ul class="nav-links">
+    <li><a href="file:///D:/Projet/Porfoilio/portfolio_makhdi.html#hero">Accueil</a></li>
+    <li><a href="file:///D:/Projet/Porfoilio/portfolio_makhdi.html#parcours">Parcours</a></li>
+    <li><a href="file:///D:/Projet/Porfoilio/portfolio_makhdi.html#competences">Compétences</a></li>
+    <li><a href="file:///D:/Projet/Porfoilio/portfolio_makhdi.html#projets">Projets</a></li>
+    <li><a href="file:///D:/Projet/Porfoilio/portfolio_makhdi.html#experience">Expérience</a></li>
+    <li><a href="file:///D:/Projet/Porfoilio/portfolio_makhdi.html#interets">Intérêts</a></li>
+    <li><a href="file:///D:/Projet/Porfoilio/portfolio_makhdi.html#ambitions">Ambitions</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">🎓 Étudiant BUT Informatique</div>
+    <h1 class="hero-name">Makhdi<br><span>Akboulatov</span></h1>
+    <p class="hero-sub">Passionné par la cybersécurité, le développement et la création de jeux vidéo. Profil multiculturel, curieux et adaptable.</p>
+    <div class="hero-contacts">
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+        Guyancourt, Île-de-France
+      </div>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 7 10-7"></path></svg>
+        Disponible en stage
+      </div>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        Mention Bien au Bac
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS SCOLAIRE -->
+<section id="parcours">
+  <div class="section-header reveal visible">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Parcours scolaire</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item reveal visible">
+      <div class="tl-dot"></div>
+      <div class="tl-year">2024 — Présent</div>
+      <div class="tl-title">BUT Informatique</div>
+      <div class="tl-sub">IUT d'Orsay — Université Paris-Saclay</div>
+      <div class="tl-tags">
+        <span class="tag">Développement</span>
+        <span class="tag">Bases de données</span>
+        <span class="tag purple">Systèmes &amp; Réseaux</span>
+        <span class="tag green">Cybersécurité</span>
+      </div>
+    </div>
+    <div class="tl-item reveal visible">
+      <div class="tl-dot"></div>
+      <div class="tl-year">2021 — 2024</div>
+      <div class="tl-title">Baccalauréat Général — Mention Bien</div>
+      <div class="tl-sub">Spécialités : Mathématiques · Informatique · Physique-Chimie</div>
+      <div class="tl-tags">
+        <span class="tag">Maths</span>
+        <span class="tag">NSI</span>
+        <span class="tag purple">Section Euro Allemand</span>
+      </div>
+    </div>
+    <div class="tl-item reveal visible">
+      <div class="tl-dot"></div>
+      <div class="tl-year">Avant le Bac</div>
+      <div class="tl-title">Parcours international</div>
+      <div class="tl-sub">Scolarité dans plusieurs pays — Expérience multiculturelle enrichissante</div>
+      <div class="tl-tags">
+        <span class="tag green">France</span>
+        <span class="tag green">International</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPÉTENCES -->
+<section id="competences">
+  <div class="section-header reveal visible">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Compétences</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid">
+    <!-- Langages -->
+    <div class="skill-card reveal visible">
+      
+      <h3>Langages &amp; Dev</h3>
+      <div class="skill-item">
+        <span>Python</span>
+        <div class="skill-level"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div>
+      </div>
+      <div class="skill-item">
+        <span>C++</span>
+        <div class="skill-level"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+      <div class="skill-item">
+        <span>HTML / CSS</span>
+        <div class="skill-level"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div>
+      </div>
+      <div class="skill-item">
+        <span>POO</span>
+        <div class="skill-level"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div>
+      </div>
+      <div class="skill-item">
+        <span>Récursivité</span>
+        <div class="skill-level"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+      <div class="skill-item">
+        <span>Godot 4.x (Game Dev)</span>
+        <div class="skill-level"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+    </div>
+
+    <!-- Langues -->
+    <div class="skill-card reveal visible">
+      
+      <h3>Langues</h3>
+      <div class="skill-item">
+        <span>Français</span>
+        <div class="skill-level"><div class="dot on purple"></div><div class="dot on purple"></div><div class="dot on purple"></div><div class="dot on purple"></div><div class="dot on purple"></div></div>
+      </div>
+      <div class="skill-item">
+        <span>Anglais (C1)</span>
+        <div class="skill-level"><div class="dot on purple"></div><div class="dot on purple"></div><div class="dot on purple"></div><div class="dot on purple"></div><div class="dot purple"></div></div>
+      </div>
+      <div class="skill-item">
+        <span>Russe (B2)</span>
+        <div class="skill-level"><div class="dot on purple"></div><div class="dot on purple"></div><div class="dot on purple"></div><div class="dot on purple"></div><div class="dot"></div></div>
+      </div>
+      <div class="skill-item">
+        <span>Allemand (B1/B2)</span>
+        <div class="skill-level"><div class="dot on purple"></div><div class="dot on purple"></div><div class="dot on purple"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+    </div>
+
+    <!-- Savoir-être -->
+    <div class="skill-card reveal visible">
+      
+      <h3>Savoir-être</h3>
+      <div class="skill-item"><span>Ponctualité</span><div class="skill-level"><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div></div></div>
+      <div class="skill-item"><span>Flexibilité &amp; Adaptation</span><div class="skill-level"><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div></div></div>
+      <div class="skill-item"><span>Travail en équipe</span><div class="skill-level"><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div><div class="dot"></div></div></div>
+      <div class="skill-item"><span>Discernement social</span><div class="skill-level"><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div><div class="dot"></div></div></div>
+      <div class="skill-item"><span>Bonne intuition</span><div class="skill-level"><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div><div class="dot on green"></div><div class="dot"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section id="projets">
+  <div class="section-header reveal visible">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Projets réalisés</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+
+    <!-- CTF -->
+    <div class="project-card ctf reveal visible">
+      <div class="project-bg"></div>
+      <div class="project-overlay">
+        <div class="project-cat">Base de Données</div>
+        <div class="project-name">Gestion base de données sur Rasberry PI</div>
+        <div class="project-desc">Gerer les permissions sur une base de données sur un Rasberry PI</div>
+        <div class="project-skills">
+          <span class="tag green">Rasberry PI</span>
+          <span class="tag green">Linux</span>
+          <span class="tag green">SQL</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Game Jam -->
+	<a href ="https://cgj.bpaul.fr/" class = "linkage">
+    <div class="project-card gamejam reveal visible">
+      <div class="project-bg"></div>
+      <div class="project-overlay">
+        <div class="project-cat">🎮 Game Jam</div>
+        <div class="project-name">Code Game Jam IUT Orsay</div>
+        <div class="project-desc">24h pour programmer un jeu complet en équipe à l'IUT d'Orsay. Rôle principal : programmation du gameplay.</div>
+        <div class="project-skills">
+          <span class="tag purple">Python</span>
+          <span class="tag purple">Travail d'équipe</span>
+          <span class="tag purple">Game Dev</span>
+        </div>
+      </div>
+    </div>
+	</a>
+
+    <!-- Godot -->
+	<a href ="https://github.com/KenDArman/KenDArman" class = "linkage">
+    <div class="project-card godot reveal visible">
+      <div class="project-bg"></div>
+      <div class="project-overlay">
+        <div class="project-cat">⚙️ Développement</div>
+        <div class="project-name">Création de jeux vidéo</div>
+        <div class="project-desc">Apprentissage autodidacte du moteur Godot 4.x — développement de prototypes de jeux indie.</div>
+        <div class="project-skills">
+          <span class="tag">Godot 4.x</span>
+          <span class="tag">GDScript</span>
+          <span class="tag">Game Design</span>
+        </div>
+      </div>
+    </div>
+	</a>
+	
+  </div>
+</section>
+
+<!-- EXPÉRIENCE PROFESSIONNELLE -->
+<section id="experience">
+  <div class="section-header reveal visible">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Expérience professionnelle</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="exp-grid">
+    <div class="exp-card reveal visible">
+      <div class="exp-top">
+        
+        <span class="exp-badge">Recherche active</span>
+      </div>
+      <h3>Stage en Informatique</h3>
+      <p>À la recherche d'une opportunité en stage dans le secteur IT — cybersécurité, développement ou systèmes. Première prise de contact lors du salon VivaTech à Paris.</p>
+    </div>
+    <div class="exp-card reveal visible">
+      <div class="exp-top">
+        
+        <span class="exp-badge">Réalisé</span>
+      </div>
+      <h3>Stage en restauration</h3>
+      <p>Stage d'une semaine dans le secteur de la restauration. Expérience de terrain développant rigueur, ponctualité et sens du service.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CENTRES D'INTÉRÊT -->
+<section id="interets">
+  <div class="section-header reveal visible">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Centres d'intérêt</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="interests-grid">
+    <div class="interest-card reveal visible">
+      <span class="interest-emoji">♟️</span>
+      <h3>Échecs</h3>
+      <p>Jeu de stratégie développant la logique, l'anticipation et la gestion de la pression.</p>
+    </div>
+    <div class="interest-card reveal visible">
+      <span class="interest-emoji">📖</span>
+      <h3>Lecture — Manga</h3>
+      <p>Lecteur assidu de mangas — univers narratifs riches en créativité et storytelling.</p>
+    </div>
+    <div class="interest-card reveal visible">
+      <span class="interest-emoji">🎮</span>
+      <h3>Création de jeux vidéo</h3>
+      <p>Passion pour la conception de jeux avec Godot 4.x — du concept à la réalisation.</p>
+    </div>
+    <div class="interest-card reveal visible">
+      <span class="interest-emoji">🎬</span>
+      <h3>Montage vidéo</h3>
+      <p>Initiation au montage vidéo — création de contenus visuels et narration audiovisuelle.</p>
+    </div>
+    <div class="interest-card reveal visible">
+      <span class="interest-emoji">🌏</span>
+      <h3>Culture internationale</h3>
+      <p>Ayant vécu dans plusieurs pays, je m'intéresse aux cultures, langues et différences de perspectives.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AMBITIONS -->
+<section id="ambitions">
+  <div class="section-header reveal visible">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Projet professionnel</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="ambitions-grid">
+    <div class="amb-card ct reveal visible">
+      <div class="amb-horizon">Court terme</div>
+      <h3>Décrocher un stage</h3>
+      <p>Intégrer une entreprise tech en stage pour mettre en pratique mes compétences en cybersécurité ou développement, et gagner ma première expérience professionnelle significative.</p>
+    </div>
+    <div class="amb-card mt reveal visible">
+      <div class="amb-horizon">Moyen terme</div>
+      <h3>Obtenir le BUT Informatique</h3>
+      <p>Valider mon diplôme, approfondir mes spécialisations (cybersécurité / systèmes), et envisager une poursuite d'études en Master ou école d'ingénieurs.</p>
+    </div>
+    <div class="amb-card lt reveal visible">
+      <div class="amb-horizon">Long terme</div>
+      <h3>Expert en cybersécurité</h3>
+      <p>Devenir un professionnel reconnu dans le domaine de la cybersécurité ou du développement, en m'appuyant sur mon profil multiculturel pour apporter des solutions créatives.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Makhdi Akboulatov</div>
+  <p>Portfolio · BUT Informatique · IUT d'Orsay</p>
+  <p style="color:var(--muted);font-size:0.8rem;">© 2025 — Tous droits réservés</p>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), 80 * [...reveals].indexOf(e.target) % 4 * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+
+
+
+</body></html>
